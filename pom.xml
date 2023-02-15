@@ -139,7 +139,7 @@
     <repositories>
         <repository>
             <id>central</id>
-            <url>http://repo1.maven.org/maven2</url>
+            <url>https://repo1.maven.org/maven2</url>
             <snapshots>
                 <enabled>false</enabled>
             </snapshots>
@@ -1700,9 +1700,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
                     <version>3.0.1</version>
-                    <configuration>
-                        <additionalparam>${maven.javadoc.opts}</additionalparam>
-                    </configuration>
                 </plugin>
                 <plugin>
                     <groupId>org.codehaus.mojo</groupId>
@@ -1830,10 +1827,8 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>findbugs-maven-plugin</artifactId>
                 <configuration>
-                    <excludeSubProjects>false</excludeSubProjects>
                     <xmlOutput>true</xmlOutput>
                     <findbugsXmlOutput>true</findbugsXmlOutput>
-                    <findbugsXmlWithMessages>true</findbugsXmlWithMessages>
                     <effort>Max</effort>
                     <failOnError>false</failOnError>
                     <threshold>Low</threshold>
@@ -1869,7 +1864,6 @@
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>xml-maven-plugin</artifactId>
                 <configuration>
-                    <excludeSubProjects>false</excludeSubProjects>
                     <transformationSets>
                         <transformationSet>
                             <dir>${project.build.directory}/findbugs</dir>
@@ -1997,7 +1991,7 @@
                     <!-- DO NOT CHANGE THIS VALUES, TESTCASES CANNOT RUN IN PARALLEL -->
                     <parallel>classes</parallel>
                     <threadCount>1</threadCount>
-                    <perCoreThreadCount>1</perCoreThreadCount>
+                    <perCoreThreadCount>true</perCoreThreadCount>
                     <classpathDependencyExcludes>
                         <classpathDependencyExclude>javax.servlet:servlet-api</classpathDependencyExclude>
                     </classpathDependencyExcludes>

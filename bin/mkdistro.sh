@@ -20,13 +20,13 @@
 #Utility method
 function setRevUrl() {
    #Checking svn first
-   if which svn >/dev/null; then
-      if [ -d ".svn" ]; then
-         export VC_REV=`svn info | grep "Revision" | awk '{print $2}'`
-         export VC_URL=`svn info | grep "URL" | awk '{print $2}'`
-      fi
-   fi
-
+#   if which svn >/dev/null; then
+#      if [ -d ".svn" ]; then
+#         export VC_REV=`svn info | grep "Revision" | awk '{print $2}'`
+#         export VC_URL=`svn info | grep "URL" | awk '{print $2}'`
+#      fi
+#   fi
+#
    #Checking for git if SVN is not there
    if [ "${VC_REV}" == "" ]; then
       if which git  >/dev/null; then
